@@ -5,14 +5,17 @@ body {
 }
 
 .game-container {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cell {
     font-family: cursive;
     width: 1em;
     height: 1em;
-    border: 1px solid black;
+    border: 1px solid #6d7b94;
+    color: white;
     text-align: center;
     line-height: 1em;
     font-size: 5em;
@@ -24,4 +27,10 @@ body {
     grid-template-columns: repeat(3, auto);
     justify-content: center;
     align-items: center;
+}
+
+.game-board {
+    background-color: #3a4457;
+    padding: 1.5em;
+    border-radius: 25px;
 }
