@@ -71,15 +71,20 @@ function PlayerTies() {
 function resetGame(){
     currentPlayer = PLAYER_ONE_MARK
     $currentPlayer.textContent = currentPlayer
-
+    $resetBtn.setAttribute("disabled", "disabled")
+    
     clearCell()
     isRunning = true
 }
 
 function cellClickHandler(ev) {
     if (!isRunning) return
+    
+    if ($resetBtn.getAttribute("disabled")) {
+        $resetBtn.removeAttribute("disabled")
+    }
     const selectedCellIndex = ev.target.getAttribute("cell-index")
-
+    
     if (isCellEmpty(selectedCellIndex)) {
         setCell(selectedCellIndex, currentPlayer)
         if (playerWins()) {
